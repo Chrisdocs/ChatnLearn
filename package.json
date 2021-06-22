@@ -1,5 +1,5 @@
 {
-  "name": "Chatnlearn",
+  "name": "ChatNLearn",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
@@ -21,6 +21,8 @@
   "dependencies": {
     "express": "^4.17.1",
     "jest": "^27.0.4",
-    "sequelize": "^6.6.2"
+    "node": "^16.3.0",
+    "sequelize": "^6.6.2",
+    "socket.io": "^4.1.2"
   }
 }
