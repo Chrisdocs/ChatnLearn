@@ -1,0 +1,26 @@
+{
+  "name": "Chatnlearn",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "jest",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chrisdocs/ChatnLearn.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chrisdocs/ChatnLearn/issues"
+  },
+  "homepage": "https://github.com/Chrisdocs/ChatnLearn#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "jest": "^27.0.4",
+    "sequelize": "^6.6.2"
+  }
+}
