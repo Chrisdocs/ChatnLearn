@@ -10,7 +10,6 @@ const sequelize = require('./config/connection');
 const hbs = exphbs.create({ helpers });
 
 const PORT = process.env.PORT || 3001;
-
 const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
@@ -29,9 +28,9 @@ const {
 } = require("socket.io");
 
 app.use(session(sess));
-
-// app.engine('handlebars', hbs.engine);
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.engine('handlebars', exphbs({
+    defaultLayout: 'main'
+}));
 app.set('view engine', 'handlebars');
 
 app.use(express.json());
@@ -59,3 +58,27 @@ sequelize.sync({ force: false }).then(() => {
         console.log('listening on *:3001');
     })
 });
+// Dependencies
+// =============================================================
+
+// Sets up the Express App
+// =============================================================
+
+// Set Handlebars as the default template engine.
+
+
+// Routes
+// =============================================================
+// GET route for getting all of the ice cream flavors
+app.get('/', (req, res) => {
+    res.render('all');
+});
+// Create a route for getting a specific ice cream flavor
+app.get('/login', (req, res) => {
+    return res.render('login');
+});
+// Starts the server to begin listening
+// =============================================================
+// app.listen(3004, () => {
+//     console.log('Server listening on: http://localhost:' + 3001);
+// });
