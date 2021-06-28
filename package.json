@@ -20,6 +20,7 @@
   "homepage": "https://github.com/Chrisdocs/ChatnLearn#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
+    "bootstrap": "^5.0.2",
     "connect-session-sequelize": "^7.1.1",
     "dotenv": "^10.0.0",
     "express": "^4.17.1",
@@ -28,6 +29,7 @@
     "jest": "^27.0.5",
     "mysql2": "^2.2.5",
     "node": "^16.3.0",
+    "nodemon": "^2.0.7",
     "sequelize": "^6.6.2",
     "session": "^0.1.0",
     "socket.io": "^4.1.2"
