@@ -56,7 +56,7 @@ router.post('/', (req, res) => {
             res.json(userDbData)
         })
     })
-    .then(userDbData => res.json(userDbData))
+    // .then(userDbData => res.json(userDbData))
     // })
     .catch(err => {
         console.log(err);
