@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat n learn</title>
+    <title>Socket.IO chat</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="../public/css/style.css" />
+</head>
+<body>
+    <div class="container" id="main-chat-div">
+        <div class="row">
+
+        <div class="col-4">
+
+            <div id="friend-box">
+                <h3 id="nameh3">Name{{display_name}}</h3>
+                <div id="info-box">
+
+                    <h4 id="locationh4">Location</h4>
+                    <h4 id="speakh4">I speak</h4>
+                    <h4 id="learnh4">I am learning</h4>
+                    <ol id="enjoy-list">
+                        <h4>I enjoy</h4>
+                        <li>hiking</li>
+                        <li>food</li>
+                        <li>parties</li>
+                    </ol>
+                    
+                </div>
+            </div>
+
+        </div>
+
+        <div class="col-8">
+            {{> chat}}
+        </div>
+
+        </div>
+    </div>
+    
+</body>
+</html>

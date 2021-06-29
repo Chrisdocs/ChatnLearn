@@ -41,10 +41,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.get('/chat', (req, res) => {
-    res.sendFile(__dirname + '/public/html/index.html');
-});
-
 app.use(routes);
 
 io.on('connection', (socket) => {

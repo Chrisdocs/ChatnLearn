@@ -1,0 +1,90 @@
+body {
+    margin: 0;
+    padding-bottom: 3rem;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+#form {
+    background: #5b6bc0;
+    border: 3px solid #5b6bc0;
+    border-radius: 25px;
+    padding: 0.25rem;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    height: 3rem;
+    box-sizing: border-box;
+    backdrop-filter: blur(10px);
+}
+
+#input {
+    border: none;
+    padding: 0 1rem;
+    flex-grow: 1;
+    border-radius: 2rem;
+    margin: 0.25rem;
+}
+
+#input:focus {
+    outline: none;
+}
+
+#form>button {
+    background: #f1d581;
+    border: none;
+    padding: 0 1rem;
+    margin: 0.25rem;
+    border-radius: 3px;
+    outline: none;
+    color: #333;
+}
+
+#messages {
+    width: 100%;
+    height: 300px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 15px solid #5b6bc0;
+    border-radius: 25px;
+    background-color: #f8f8f8;
+    resize: none;
+    overflow-y: scroll;
+    list-style: none;
+}
+
+#messages>li {
+    padding: 0.5rem 1rem;
+}
+
+#messages>li:nth-child(odd) {
+    background: #efefef;
+}
+
+#main-chat-div {
+    padding-top: 40px;
+}
+
+#nameh3 {
+    display: flex;
+    justify-content: center;
+}
+
+#info-box{
+    background-color: #7885cb;
+    border: solid #7885cb;
+    border-radius: 25px;
+}
+
+#locationh4, #speakh4, #learnh4, #enjoy-list {
+    background-color: #6bd8b9;
+    border: solid #6bd8b9;
+    border-radius: 25px;
+}
+
+#friend-box {
+    background-color: #5b6bc0;
+    border: solid #5b6bc0;
+    border-radius: 25px;
+}
