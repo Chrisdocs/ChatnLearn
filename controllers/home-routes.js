@@ -11,6 +11,10 @@ router.get('/chat', (req, res) => {
     res.render('chat')
 });
 
+router.get('/user/:id/chat', (req, res) => {
+    res.render('chat')
+})
+
 router.get('/login', (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
