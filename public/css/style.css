@@ -88,3 +88,36 @@ body {
     border: solid #5b6bc0;
     border-radius: 25px;
 }
+
+.user-card-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.user-card-col {
+flex: 50%;
+}
+
+
+
+
+
+
+@media screen and (max-width: 576px) {
+    .user-card-col {
+        flex: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+
+}
+
+@media screen and (max-width: 992px) {
+    
+}
+
+@media screen and (max-width: 1200px) {
+    
+}

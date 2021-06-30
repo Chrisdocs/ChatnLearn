@@ -7,6 +7,10 @@ router.get('/', (req, res) => {
     res.render('homepage')
 });
 
+router.get('/user-dash', (req, res) => {
+    res.render('user-dash')
+});
+
 router.get('/chat', (req, res) => {
     res.render('chatroom')
 });
