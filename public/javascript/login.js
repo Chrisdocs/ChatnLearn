@@ -8,7 +8,7 @@ async function loginFormHandler(event) {
 
     if (user_login && password) {
         const res = await fetch('/api/users/login', {
-            method: 'post',
+            method: 'POST',
             body: JSON.stringify({
                 user_login,
                 password
@@ -19,7 +19,7 @@ async function loginFormHandler(event) {
         });
 
         if (res.ok) {
-            document.location.replace('/');
+            document.location.replace('/user-dash');
         } else {
             alert(res.statusText);
         }

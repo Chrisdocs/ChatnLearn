@@ -1,4 +1,4 @@
-const User = require('./users');
+const User = require('./User');
 const LangSpk = require('./language_spoken');
 
 // User.hasMany(Friends, {
