@@ -15,12 +15,12 @@
             <div class="container-fluid">
               <a class="navbar-brand logo" href="/"><img src="https://img.icons8.com/ios/50/000000/weixing.png" alt="" width="30" height="30" class="d-inline-block">Chat 'n' Learn</a>
               <div>
-                <a class="navbar-brand" href="/user-dash" role="button">Account</a>
-                <a class="navbar-brand" href="/user-dash" role="button">Friends</a>
                 {{#if loggedIn}}
+                <a class="navbar-brand" href="#" role="button">Account</a>
+                <a class="navbar-brand" href="/user-dash" role="button">Friends</a>
                 <a href="/" id="logout" class="navbar-brand">Logout</a>
                 {{else}}
-                <a class="navbar-brand" href="/login" role="button">Login</a>
+                <a class="navbar-brand" href="/login">Login</a>
                 {{/if}}
               </div>
             </div>
@@ -30,14 +30,14 @@
     <main class="col-10 mx-auto">
         {{{body}}}
     </main>
+    
     <footer class="d-flex justify-content-center">
         <p>The Greatest Team Inc. ©2021</p>
     </footer>
-  </div>
 
-
-<script src="/javascript/logout.js"></script>
-
+  {{#if loggedIn}}
+  <script src="/javascript/logout.js"></script>
+  {{/if}}
 </body>
 
 </html>
