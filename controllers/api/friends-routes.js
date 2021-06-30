@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const {User, Friends} = require('../../models');
+const withAuth = require('../../utils/auth')
 
 // Get all Users friends
-router.get('/:id', (req, res) => {
+router.get('/:id', withAuth, (req, res) => {
     Friends.findAll({
         where: {
             id: req.session.user_id

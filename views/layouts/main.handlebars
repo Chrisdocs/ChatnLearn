@@ -13,15 +13,11 @@
     <header>
           <nav class="navbar navbar-light" style="background-color: #e3f2fd;">
             <div class="container-fluid">
-              <a class="navbar-brand logo" href="/"><img src="https://img.icons8.com/ios/50/000000/weixing.png" alt="" width="30" height="30" class="d-inline-block">Chat 'n' Learn</a>
+              <a class="navbar-brand logo" href="/"><img src="https://img.icons8.com/ios/50/000000/weixing.png" alt="" width="30" height="30" class="d-inline-block nav-title">Chat 'n' Learn</a>
               <div>
-                {{#if loggedIn}}
-                <a class="navbar-brand" href="#" role="button">Account</a>
                 <a class="navbar-brand" href="/user-dash" role="button">Friends</a>
                 <a href="/" id="logout" class="navbar-brand">Logout</a>
-                {{else}}
                 <a class="navbar-brand" href="/login">Login</a>
-                {{/if}}
               </div>
             </div>
           </nav>
@@ -35,9 +31,7 @@
         <p>The Greatest Team Inc. ©2021</p>
     </footer>
 
-  {{#if loggedIn}}
   <script src="/javascript/logout.js"></script>
-  {{/if}}
 </body>
 
 </html>
