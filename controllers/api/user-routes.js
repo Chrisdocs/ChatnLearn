@@ -100,7 +100,7 @@ router.post('/login', async (request, response) => {
     try {
         const dbUserData = await User.findOne({
             where: {
-                username: request.body.username,
+                user_login: request.body.user_login,
             },
         });
 
@@ -118,7 +118,7 @@ router.post('/login', async (request, response) => {
 
         request.session.save(() => {
             request.session.user_id = dbUserData.id;
-            request.session.username = dbUserData.username;
+            request.session.user_login = dbUserData.user_login;
             request.session.loggedIn = true;
 
             response.status(200).json({ user: dbUserData, message: 'You are now logged in!' });

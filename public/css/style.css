@@ -22,13 +22,19 @@ body {
 }
 
 main {
-    background-color: #b5faff;
+    background-color: #e3f2fd;
+    border-radius: 20px;
+    margin-top: 50px;
+}
+
+.home-title {
+    font-family: 'Lobster', cursive;
 }
 
 .navbar-brand {
     font-size: x-large;
     font-weight: bold;
-    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Lobster', cursive;
 }
 
 #input {
@@ -51,6 +57,10 @@ main {
     border-radius: 3px;
     outline: none;
     color: #333;
+}
+
+.form-label {
+    font-family: 'Lobster', cursive;
 }
 
 #messages {

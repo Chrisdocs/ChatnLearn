@@ -1,10 +1,10 @@
 const router = require('express').Router();
 //const sequelize = require('../config/connection');
 const { User } = require('../models');
-//const authentication = require('../utils/auth');
+const withAuth = require('../utils/auth');
 
 // Get all users on dashboard
-router.get('/', (request, response) => {
+router.get('/', withAuth, (request, response) => {
         User.findAll({
             where: {
                 id: request.session.id,
