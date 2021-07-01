@@ -11,27 +11,7 @@ router.get('/', withAuth, (request, response) => {
             },
             attributes: [
                 'display_name',
-            ],
-            // include: [
-            //     {
-            //         model: User,
-            //         attributes: ['username'],
-            //     },
-            //     {
-            //         model: Comment,
-            //         attributes: [
-            //             'id',
-            //             'comment_text',
-            //             'post_id',
-            //             'user_id',
-            //             'created_at'
-            //         ],
-            //         include: {
-            //             model: User,
-            //             attributes: ['username'],
-            //         },
-            //     },
-            // ],
+            ]
         })
         .then(dbUserData => {
             const users = dbUserData.map(user => user.get({ plain: true }));
