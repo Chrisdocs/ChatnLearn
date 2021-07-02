@@ -31,7 +31,7 @@ const {
 app.use(session(sess));
 
 // app.engine('handlebars', hbs.engine);
-app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 app.use(express.static('views/images')); 
 

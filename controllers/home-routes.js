@@ -4,11 +4,31 @@ const User = require('../models');
 
 router.get('/', (req, res) => {
     console.log(req.session);
-    res.render('homepage')
+    console.log(User)
+    // res.render('homepage')
+    User.findAll({})
+        .then(dbUserData => {
+            console.log(dbUserData)
+            res.render('homepage', dbUserData)
+        })
+        .catch(err => {
+            console.log(err);
+            res.status(500).json(err);
+        });
 });
 
 router.get('/user-dash', (req, res) => {
-    res.render('user-dash')
+    console.log(req.session);
+    console.log(User)
+    User.findAll({})
+    .then(dbUserData => {
+        console.log(dbUserData)
+        res.render('user-dash', dbUserData)
+    })
+    .catch(err => {
+        console.log(err);
+        res.status(500).json(err);
+    });
 });
 
 router.get('/chat', (req, res) => {

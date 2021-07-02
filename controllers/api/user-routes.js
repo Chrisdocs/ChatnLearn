@@ -2,18 +2,33 @@ const router = require('express').Router();
 const User = require('../../models');
 
 // Get all Users /api/users (get)
-router.get('/', (req, res) => {
-    User.findAll({
-        attributes: {
-            exclude: ['password']
-        }
-    })
-    .then(userDbData => res.json(userDbData))
-    .catch(err => {
+// router.get('/', (req, res) => {
+//     User.findAll({
+//         attributes: {
+//             exclude: ['password']
+//         }
+//     })
+//     .then(userDbData => res.json(userDbData))
+//     .catch(err => {
+//         console.log(err);
+//         res.status(500).json(err);
+//     })
+// })
+
+// Alt Get all users
+router.get('/', async (request, response) => {
+    console.log('========>>>>>>', User)
+    try {
+        const dbUserData = await User.findAll({
+            attributes: { exclude: ['password'] },
+        });
+
+        response.status(200).json(dbUserData);
+    } catch (err) {
         console.log(err);
-        res.status(500).json(err);
-    })
-})
+        response.status(500).json(err);
+    }
+});
 
 // Get one User /api/users/id (get)
 router.get('/:id', (req, res) => {
@@ -85,6 +100,7 @@ router.post('/login', (req, res) => {
         req.session.save(() => {
             req.session.user_id = loginUserData.id;
             req.session.user_login = loginUserData.user_login;
+            req.session.display_name = loginUserData.display_name;
             req.session.loggedIn = true;
 
             res.json({ user: loginUserData, message: 'You are logged in!'})
