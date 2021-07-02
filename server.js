@@ -8,7 +8,6 @@ const io = require('socket.io')(http);
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const hbs = exphbs.create({ helpers });
-const bodyParser = require('body-parser');
 
 const PORT = process.env.PORT || 3001;
 
@@ -34,13 +33,14 @@ app.use(session(sess));
 // app.engine('handlebars', hbs.engine);
 app.engine('handlebars', exphbs({ defaultLayout: 'main' }));
 app.set('view engine', 'handlebars');
+app.use(express.static('views/images')); 
 
-app.use(express.static(path.join(__dirname, 'public')));
-app.use(express.static('views/images'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use(bodyParser.json());
-// app.use(bodyParser.urlencoded({extended: false}));
+
+app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 app.use(routes);
 
@@ -53,6 +53,6 @@ io.on('connection', (socket) => {
 
 sequelize.sync({ force: false }).then(() => {
     http.listen(PORT, () => {
-        console.log('listening on port', PORT);
+        console.log('listening on, ', PORT);
     })
 });

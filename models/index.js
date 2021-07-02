@@ -1,9 +1,3 @@
-const User = require('./User');
-const LangSpk = require('./language_spoken');
-const Friends = require('./friends')
+const User = require('./users');
 
-// User.hasMany(Friends, {
-//     foreignKey: 'user_id'
-// });
-
-module.exports = { User, LangSpk, Friends };
+module.exports = User;
