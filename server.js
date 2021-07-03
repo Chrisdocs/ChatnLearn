@@ -8,6 +8,7 @@ const io = require('socket.io')(http);
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const hbs = exphbs.create({ helpers });
+const dotenv = require('dotenv');
 
 const PORT = process.env.PORT || 3001;
 
@@ -49,7 +50,6 @@ io.on('connection', (socket) => {
         io.emit('chat message', msg);
     });
 });
-
 
 sequelize.sync({ force: false }).then(() => {
     http.listen(PORT, () => {
