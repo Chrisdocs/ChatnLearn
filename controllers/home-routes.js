@@ -17,9 +17,8 @@ router.get('/', (req, res) => {
         });
 });
 
-router.get('/user-dash', (req, res) => {
-    console.log(req.session);
-    console.log(User)
+router.get('/', (req, res) => {
+
     User.findAll({})
     .then(dbUserData => {
         console.log(dbUserData)
