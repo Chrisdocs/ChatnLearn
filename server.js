@@ -8,6 +8,7 @@ const io = require('socket.io')(http);
 const routes = require('./controllers');
 const sequelize = require('./config/connection');
 const hbs = exphbs.create({ helpers });
+const dotenv = require('dotenv');
 
 const PORT = process.env.PORT || 3001;
 
@@ -15,7 +16,7 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
-    secret: 'DSAFG34t5235SDG342sgdg',
+    secret: 'pDSAFG34t5235SDG342sgdg',
     cookie: {},
     resave: false,
     saveUninitialized: true,
@@ -45,11 +46,15 @@ app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 
 io.on('connection', (socket) => {
+    console.log('socket id --===>>>', socket.id)
     socket.on('chat message', (msg) => {
         io.emit('chat message', msg);
     });
+    socket.on("private message", (anotherSocketId, msg) => {
+        socket.to(anotherSocketId).emit("private message", socket.id, msg);
+        
+    });
 });
-
 
 sequelize.sync({ force: false }).then(() => {
     http.listen(PORT, () => {
