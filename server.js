@@ -16,7 +16,7 @@ const session = require('express-session');
 const SequelizeStore = require('connect-session-sequelize')(session.Store);
 
 const sess = {
-    secret: process.env.DB_SECRET,
+    secret: 'pDSAFG34t5235SDG342sgdg',
     cookie: {},
     resave: false,
     saveUninitialized: true,
@@ -46,8 +46,13 @@ app.use(express.urlencoded({ extended: true }));
 app.use(routes);
 
 io.on('connection', (socket) => {
+    console.log('socket id --===>>>', socket.id)
     socket.on('chat message', (msg) => {
         io.emit('chat message', msg);
+    });
+    socket.on("private message", (anotherSocketId, msg) => {
+        socket.to(anotherSocketId).emit("private message", socket.id, msg);
+        
     });
 });
 
