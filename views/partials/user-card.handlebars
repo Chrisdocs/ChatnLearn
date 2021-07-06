@@ -7,13 +7,9 @@
                 </div>
                 <div class="col-md-8">
                     <div class="card-body">
-
-                        <h5 class="card-title" href="/users/{{user_id}}">{{display_name}}test</h5>
-
+                        <h5 class="card-title" href="/users/{{user_id}}">{{display_name}}</h5>
                         <div class="text-box col-5">
-
-                        <p class="card-text">Hello! My name is Sue{{display_name}}.<br>I am Learning French!<br>I can teach you English.</p>
-
+                        <p class="card-text">Hello! My name is {{display_name}}.<br>I am Learning {{lang_lrn}}!<br>I can teach you {{lang_spk}}.</p>
                         </div>
                         <p class="card-text"><small class="text-muted">Click here to add me to your friends list!</small></p>
                         <a class="go-chat" href="/chat" role="button">Go Chat!</a>
@@ -23,5 +19,3 @@
         </div>
     </div>
 </div>
-
-<script src="/javascript/start-chat.js"></script>

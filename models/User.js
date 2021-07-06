@@ -45,6 +45,14 @@ User.init({
         validate: {
             len: [6]
         }
+    },
+    lang_spk: {
+        type: DataTypes.STRING,
+        allowNull: false,
+    },
+    lang_lrn: {
+        type: DataTypes.STRING,
+        allowNull: false
     }
 }, {
     hooks: {

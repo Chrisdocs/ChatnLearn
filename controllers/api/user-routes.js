@@ -62,7 +62,9 @@ router.post('/', (req, res) => {
         user_login: req.body.user_login,
         email: req.body.email,
         display_name: req.body.display_name,
-        password: req.body.password
+        password: req.body.password,
+        lang_spk: req.body.lang_spk,
+        lang_lrn: req.body.lang_lrn
     })
     // .then(userDbData => {
     //     req.session.save(() => {
@@ -103,6 +105,8 @@ router.post('/login', (req, res) => {
             req.session.user_id = loginUserData.id;
             req.session.user_login = loginUserData.user_login;
             req.session.display_name = loginUserData.display_name;
+            req.session.lang_spk = loginUserData.lang_spk;
+            req.session.lang_lrn = loginUserData.lang_lrn;
             req.session.loggedIn = true;
 
             res.json({ user: loginUserData, message: 'You are logged in!'})

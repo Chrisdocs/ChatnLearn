@@ -1,7 +1,15 @@
 <div>
-    List all users here
-    {{#each user}}
-    <li>{{> user-card}}</li>
-    {{/each}}
-    {{> user-card}}
+    <h2 class="text-center dash-title">Friend Finder</h2>
+    <p class="text-center">currently ALL users are listed</p>
+    {{#if users.length}}
+        {{#each users as |users|}}
+            <div>
+            {{> user-card}}
+            </div>
+        {{/each}}
+        {{else}}
+            <div>
+                <p>No users have been registred yet.</p>
+            </div>
+    {{/if}}
 </div>

@@ -5,6 +5,8 @@ async function signUpFormHandler(event) {
     const email = document.querySelector('#email-signup').value.trim();
     const display_name = document.querySelector('#display-name-signup').value.trim();
     const password = document.querySelector('#password-signup').value.trim();
+    const lang_spk = document.querySelector('#lang-spk-signup').value.trim();
+    const lang_lrn = document.querySelector('#lang-lrn-signup').value.trim();
 
     if (user_login && email && display_name && password) {
         const res = await fetch('/api/users', {
@@ -13,7 +15,9 @@ async function signUpFormHandler(event) {
                 user_login,
                 email,
                 display_name,
-                password
+                password,
+                lang_spk,
+                lang_lrn
             }),
             headers: {
                 'Content-Type': 'application/json'

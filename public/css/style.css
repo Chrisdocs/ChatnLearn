@@ -54,6 +54,13 @@ main {
     font-family: 'Lobster', cursive;
 }
 
+.dash-title {
+    font-size: xx-large;
+    font-weight: bold;
+    font-family: 'Lobster', cursive;
+    color: #6bd8b9;
+    text-shadow: 1px 1px #5b6bc0;
+}
 
 #input {
     border: none;
