@@ -4,17 +4,30 @@ const {User} = require('../models');
 const withAuth = require('../utils/auth');
 
 
-router.get('/', (request, response) => {
-        User.findAll({})
+router.get('/', (req, res) => {
+        User.findOne({
+            where: {
+                id: req.session.user_id
+            }
+        })
         .then(dbUserData => {
-            const users = dbUserData.map(user => user.get({ plain: true }));
-            console.log('users console log for chat.js', users)
-            response.render('chatroom', {users, loggedIn: true});
+            res.render('chatroom', dbUserData);
         })
         .catch(err => {
             console.log(err);
-            response.status(500).json(err);
+            res.status(500).json(err);
         });
+        let userName;
+        // check if user is logged in
+        if (req.session.loggedIn = true) {
+            // if user is logged in, set userName to the name of th elogged in user
+            userName = req.session.display_name
+            console.log('userName is currently equal to:', userName)
+        } else {
+            // if not, set userName equal to "guest" with a random 5 digit number
+            userName = 'Guest';
+            console.log('userName is currently equal to:', userName)
+        }
 });
 
 
